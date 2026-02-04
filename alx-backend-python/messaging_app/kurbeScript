@@ -1,11 +1,9 @@
 #!/bin/bash
-
-# Ensure minikube exists
-if ! command -v minikube &> /dev/null; then
-  echo "Minikube not installed"
-  exit 1
-fi
-
+# Start Kubernetes cluster using Minikube
 minikube start
+
+# Verify cluster is running
 kubectl cluster-info
-kubectl get pods -A
+
+# List all pods
+kubectl get pods --all-namespaces
