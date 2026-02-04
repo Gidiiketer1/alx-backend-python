@@ -1,0 +1,6 @@
+#!/bin/bash
+
+kubectl scale deployment django-messaging --replicas=3
+kubectl get pods
+kubectl top pods
+wrk http://$(minikube ip)

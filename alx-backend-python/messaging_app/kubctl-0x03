@@ -1,0 +1,9 @@
+#!/bin/bash
+
+kubectl apply -f blue_deployment.yaml
+kubectl rollout status deployment/django-blue
+
+while true; do
+  curl http://$(minikube ip)
+  sleep 2
+done
